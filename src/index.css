@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Redaction 50";
+  src: url("./assets/Redaction50-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-card: #141a1f;
+  --color-primary: #f2dfdf;
+  --color-primary-foreground: #f2dfdf;
+  --color-secondary: #1f2830;
+  --color-secondary-foreground: #461f7a;
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+  --color-border: #242b32;
+  --color-highlight: #ccb2ef;
+  --color-surface: #1a2329;
+  --color-background: #143b34;
+  --color-foreground: #f6f0ff;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    min-height: 100vh;
+    background-image: url("../bg_main2.gif"), url("../402107790_STATIC_NOISE_400.gif");
+    background-blend-mode: overlay;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Redaction 50", Georgia, serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .font-serif {
+    font-family: "Redaction 50", Georgia, serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 55%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+  }
+}
+
+.hero {
+  color: white;
+  min-height: 100vh;
+  padding: 6rem 1.5rem 3rem;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  gap: 2.5rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
